@@ -7,7 +7,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import java.time.Duration;
 
-@Service
+@Service    // @Component classes: @Controller, @Service, @Repository, @Configuration
+            // Adding any other type to the app ctx should be done through JavaConfig
 public class JokeService {
     private WebClient client;
 
