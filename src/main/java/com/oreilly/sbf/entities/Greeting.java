@@ -1,7 +1,12 @@
 package com.oreilly.sbf.entities;
 
+import org.springframework.stereotype.Component;
+
 public class Greeting {
-    public Greeting() { }
+
+    private String message;
+
+    public Greeting() { this("Hello, World!"); }
 
     public Greeting(String message) {
         this.message = message;
@@ -14,8 +19,5 @@ public class Greeting {
     public void setMessage(String message) {
         this.message = message;
     }
-
-    private String message;
-
 
 }

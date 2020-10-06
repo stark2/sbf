@@ -10,9 +10,8 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String sayHello(
-            @RequestParam(defaultValue = "World", required = false) String name,
-            Model model) {
-        model.addAttribute("user", name);
-        return "hello";
+            @RequestParam(defaultValue = "World", required = false) String name, Model model) {
+        model.addAttribute("user", name); // Spring adds these key/values to the request
+        return "hello"; // forwards to: scr/main/ressources/templates/hello.html
     }
 }

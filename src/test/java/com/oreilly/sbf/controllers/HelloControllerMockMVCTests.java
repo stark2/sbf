@@ -9,9 +9,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 
 @WebMvcTest(HelloController.class)
-public class HelloControllerIntegrationTest {
+public class HelloControllerMockMVCTests {
 
     @Autowired
     private MockMvc mvc;
@@ -23,7 +24,7 @@ public class HelloControllerIntegrationTest {
                 .andExpect(status().isOk())
                 .andExpect(view().name("hello"))
                 .andExpect(model().attribute("user", is("World"))
-        );
+                );
     }
 
     @Test
